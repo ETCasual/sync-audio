@@ -5,7 +5,7 @@ const Panel = () => {
   const db = useFirestore();
 
   const dbRef = doc(db, "audio/settings");
-  //   const { status, data } = useFirestoreDocData(dbRef);
+  const { status, data } = useFirestoreDocData(dbRef);
 
   const update = async (ans: boolean) => {
     await updateDoc(dbRef, {
@@ -13,11 +13,20 @@ const Panel = () => {
     });
   };
 
+  const display =
+    status === "loading"
+      ? "loading"
+      : status === "success"
+        ? data.play
+          ? "play"
+          : "pause"
+        : "Error";
+
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-center bg-[url('/BG_MOBILE.jpg')] bg-cover bg-center">
       <div className="flex w-full max-w-[300px] flex-col gap-2 rounded-md bg-white p-2">
         <p className="w-full text-center font-[Arial] text-base text-black">
-          Play audio?
+          Play audio? (current: {display})
         </p>
         <button
           onClick={() => update(true)}
@@ -27,7 +36,7 @@ const Panel = () => {
         </button>
         <button
           onClick={() => update(false)}
-          className={`w-full rounded-md border border-green-400 bg-green-400 py-2`}
+          className={`w-full rounded-md border border-red-400 bg-green-400 py-2`}
         >
           Stop
         </button>
