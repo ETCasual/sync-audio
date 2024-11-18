@@ -1,5 +1,5 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { useFirestore } from "reactfire";
+import { useFirestore, useFirestoreDocData } from "reactfire";
 
 const Panel = () => {
   const db = useFirestore();
