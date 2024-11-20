@@ -28,25 +28,25 @@ const Panel = () => {
         </p>
         <button
           onClick={() => update("GREATEST")}
-          className={`w-full rounded-md border border-green-400 bg-green-400 py-2`}
+          className={`w-full rounded-md border bg-green-400 py-2 font-[Arial]`}
         >
           GREATEST
         </button>
         <button
           onClick={() => update("TIMER")}
-          className={`w-full rounded-md border border-red-400 bg-green-400 py-2`}
+          className={`w-full rounded-md border bg-green-400 py-2 font-[Arial]`}
         >
           TIMER
         </button>
         <button
           onClick={() => update("SQUID")}
-          className={`w-full rounded-md border border-red-400 bg-green-400 py-2`}
+          className={`w-full rounded-md border bg-green-400 py-2 font-[Arial]`}
         >
           SQUID
         </button>
         <button
           onClick={() => update("STOP")}
-          className={`w-full rounded-md border border-red-400 bg-green-400 py-2`}
+          className={`w-full rounded-md border bg-red-500 py-2 font-[Arial]`}
         >
           STOP
         </button>
